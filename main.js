@@ -2,7 +2,9 @@
 
 const menuBtn = document.getElementById('menu-btn');
 const mainMenu = document.getElementById('main-menu');
-const menuIcon  = document.querySelector('#menu-btn img')
+const menuIcon  = document.querySelector('#menu-btn img');
+const homeLogo = document.getElementById('home-logo')
+
 
 
 function handleMenuClick(){
@@ -10,11 +12,16 @@ function handleMenuClick(){
     if (!mainMenu.classList.contains('hidden')){
         menuBtn.setAttribute('aria-expanded', 'true');
         menuIcon.setAttribute('src', './images/icon-close.svg');
-        menuBtn.setAttribute('aria-label', 'Close the menu')
+        menuBtn.setAttribute('aria-label', 'Close the menu');
+        homeLogo.classList.remove('text-blue-950');
+        homeLogo.classList.add('text-white');
+
     } else {
         menuBtn.setAttribute('aria-expanded', 'false');
         menuIcon.setAttribute('src', './images/icon-hamburger.svg');
-        menuBtn.setAttribute('aria-label' , 'Open the menu')
+        menuBtn.setAttribute('aria-label' , 'Open the menu');
+        homeLogo.classList.remove('text-white');
+        homeLogo.classList.add('text-blue-950');
     }
     
 }
